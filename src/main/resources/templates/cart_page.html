@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="meta description">
+    <title>Juan</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Plugins CSS -->
+    <link rel="stylesheet"  th:href="@{/css/plugins.css}">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/vendor.css}">
+    <script th:src="@{/js/modernizr-2.8.3.min.js}"></script>
+    <!-- Main Style CSS -->
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<!-- Start Header Area -->
+<header class="header-area">
+    <!-- main header start -->
+    <div class="main-header d-none d-lg-block">
+
+        <!-- header top end -->
+
+        <!-- header middle area start -->
+        <div class="header-main-area sticky">
+            <div class="container">
+                <div class="row align-items-center position-relative">
+                    <!-- start logo area -->
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a th:href="@{'/home'}">
+                                <img src="img/logo/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- start logo area -->
+
+                    <!-- main menu area start -->
+                    <div class="col-lg-8 position-static">
+                        <div class="main-menu-area">
+                            <div class="main-menu">
+                                <!-- main menu navbar start -->
+                                <nav class="desktop-menu">
+                                    <ul>
+                                        <li class="active"><a th:href="@{'/home'}">Home <i class="fa fa-angle-down"></i></a>
+
+                                        </li>
+                                        <li class="static"><a href="#">pages <i class="fa fa-angle-down"></i></a>
+
+                                        </li>
+                                        <li><a th:href="@{'/shop'}">shop <i class="fa fa-angle-down"></i></a>
+
+                                        </li>
+                                        <li><a href="blog-left-sidebar.html">Blog <i class="fa fa-angle-down"></i></a>
+
+                                        </li>
+                                        <li><a href="contact-us.html">Contact us</a></li>
+                                    </ul>
+                                </nav>
+                                <!-- main menu navbar end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main menu area end -->
+
+                    <!-- mini cart area start -->
+                    <div class="col-lg-2">
+                        <div class="header-configure-wrapper">
+                            <div class="header-configure-area">
+                                <ul class="nav justify-content-end">
+                                    <li>
+                                        <a href="#" class="offcanvas-btn">
+                                            <i class="ion-ios-search-strong"></i>
+                                        </a>
+                                    </li>
+                                    <li class="user-hover">
+                                        <a href="#">
+                                            <i class="ion-ios-gear-outline"></i>
+                                        </a>
+                                        <ul class="dropdown-list">
+                                            <li><a href="login-register.html">login</a></li>
+                                            <li><a href="login-register.html">register</a></li>
+                                            <li><a href="my-account.html">my account</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="minicart-btn">
+                                            <i class="ion-bag"></i>
+                                            <div class="notification">2</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- mini cart area end -->
+                </div>
+            </div>
+        </div>
+        <!-- header middle area end -->
+    </div>
+    <!-- main header start -->
+
+    <!-- mobile header start -->
+    <div class="mobile-header d-lg-none d-md-block sticky">
+        <!--mobile header top start -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="mobile-main-header">
+                        <div class="mobile-logo">
+                            <a th:href="@{'/home'}">
+                                <img src="assets/img/logo/logo.png" alt="Brand Logo">
+                            </a>
+                        </div>
+                        <div class="mobile-menu-toggler">
+                            <div class="mini-cart-wrap">
+                                <a th:href="@{'/cart'}">
+                                    <i class="ion-bag"></i>
+                                </a>
+                            </div>
+                            <div class="mobile-menu-btn">
+                                <div class="off-canvas-btn">
+                                    <i class="ion-navicon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile header top start -->
+    </div>
+    <!-- mobile header end -->
+</header>
+<!-- end Header Area -->
+
+<!-- off-canvas menu start -->
+<aside class="off-canvas-wrapper">
+    <div class="off-canvas-overlay"></div>
+    <div class="off-canvas-inner-content">
+        <div class="btn-close-off-canvas">
+            <i class="ion-android-close"></i>
+        </div>
+
+        <div class="off-canvas-inner">
+            <!-- search box start -->
+            <div class="search-box-offcanvas">
+
+            </div>
+            <!-- search box end -->
+
+            <!-- mobile menu start -->
+            <div class="mobile-navigation">
+                <!-- mobile menu navigation start -->
+                <nav>
+                    <ul class="mobile-menu">
+                        <li class="menu-item-has-children"><a th:href="@{'/home'}">Home</a>
+
+                        </li>
+                        <li class="menu-item-has-children"><a href="#">pages</a>
+
+                        </li>
+                        <li class="menu-item-has-children "><a th:href="@{'/shop'}">shop</a>
+
+                        </li>
+                        <li class="menu-item-has-children "><a href="#">Blog</a>
+
+                        </li>
+                        <li><a href="contact-us.html">Contact us</a></li>
+                    </ul>
+                </nav>
+                <!-- mobile menu navigation end -->
+            </div>
+            <!-- mobile menu end -->
+
+            <!-- user setting option start -->
+            <div class="mobile-settings">
+                <ul class="nav">
+                    <li>
+                        <div class="dropdown mobile-top-dropdown">
+                            <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Currency
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="currency">
+                                <a class="dropdown-item" href="#">$ USD</a>
+                                <a class="dropdown-item" href="#">$ EURO</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown mobile-top-dropdown">
+                            <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                My Account
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="myaccount">
+                                <a class="dropdown-item" href="my-account.html">my account</a>
+                                <a class="dropdown-item" href="login-register.html"> login</a>
+                                <a class="dropdown-item" href="login-register.html">register</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- user setting option end -->
+
+            <!-- offcanvas widget area start -->
+            <div class="offcanvas-widget-area">
+                <div class="off-canvas-contact-widget">
+                    <ul>
+                        <li><i class="fa fa-mobile"></i>
+                            <a href="#">0123456789</a>
+                        </li>
+                        <li><i class="fa fa-envelope-o"></i>
+                            <a href="#">info@yourdomain.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="off-canvas-social-widget">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+            <!-- offcanvas widget area end -->
+        </div>
+    </div>
+</aside>
+<!-- off-canvas menu end -->
+
+<!-- main wrapper start -->
+<main>
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area bg-img" data-bg="assets/img/banner/breadcrumb-banner.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap text-center">
+                        <nav aria-label="breadcrumb">
+                            <h1 class="breadcrumb-title">Cart</h1>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a th:href="@{'/home'}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+    <!-- cart main wrapper start -->
+    <div class="cart-main-wrapper section-padding">
+        <div class="container">
+            <div class="section-bg-color">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form th:action="@{/updateCart}" method="get">
+                        <!-- Cart Table Area -->
+                        <div class="cart-table table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th class="pro-thumbnail">Thumbnail</th>
+                                    <th class="pro-title">Product</th>
+                                    <th class="pro-price">Price</th>
+                                    <th class="pro-quantity">Quantity</th>
+                                    <th class="pro-subtotal">Total</th>
+                                    <th class="pro-remove">Remove</th>
+                                </tr>
+                                </thead>
+                                <tbody id="cart-item">
+                                <tr class="cart-row" th:each="items : ${session.cart}">
+                                    <input th:name="id_Product" type="hidden" th:value="${items.productDTO.id}">
+                                    <td class="pro-thumbnail"><a href="#"><img class="img-fluid" th:src="|@{/images/}${items.productDTO.photo}|" alt="Product" /></a></td>
+                                    <td class="pro-title "><a href="#" th:text="${items.productDTO.name}"></a></td>
+                                    <td  class="pro-price "><span th:id="${'cart-price-' + items.productDTO.id}" class="cart_price" th:text="${items.productDTO.price}"></span></td>
+                                    <td class="pro-quantity">
+                                        <div class="pro-qty"><input th:name="quantities" th:onchange="'changeQuantity(this.value,\''+ ${items.productDTO.id} +'\');'" th:id="${'cart-quantity-input-'+items.productDTO.id}" class="cart-quantity-input" type="number" th:value="${items.quantity}" style="align-content: center"></div>
+                                    </td>
+                                    <td id="subTotal"><span th:id="${'pro-subtotal-' + items.productDTO.id}" th:text="${items.productDTO.price*items.quantity}"></span></td>
+                                    <td class="pro-remove"><a th:onclick="'removeProductInCart(\'' + ${items.productDTO.id} + '\');'"><i class="fa fa-trash-o"></i></a></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Cart Update Option -->
+                        <div class="cart-update-option d-block d-md-flex justify-content-between">
+<!--                            <div class="apply-coupon-wrapper">-->
+<!--&lt;!&ndash;                                <form action="#" method="post" class=" d-block d-md-flex">&ndash;&gt;-->
+<!--                                    <input type="text" placeholder="Enter Your Coupon Code" required />-->
+<!--                                    <button class="btn">Apply Coupon</button>-->
+<!--&lt;!&ndash;                                </form>&ndash;&gt;-->
+<!--                            </div>-->
+                            <div class="cart-update">
+                                <button class="btn" type="submit">Update Cart</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 ml-auto">
+                        <!-- Cart Calculation Area -->
+                        <div class="cart-calculator-wrapper">
+                            <div class="cart-calculate-items">
+                                <h3>Cart Totals</h3>
+                                <div class="table-responsive">
+                                    <table class="table">
+
+                                        <tr class="total">
+                                            <td>Total</td>
+                                            <td id="cart-total-price" class="total-amount"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <a th:href="@{'/checkout'}" class="btn d-block">Proceed Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cart main wrapper end -->
+</main>
+<!-- main wrapper end -->
+
+<!-- Start Footer Area Wrapper -->
+<footer class="footer-wrapper">
+    <!-- footer main area start -->
+    <div class="footer-widget-area section-padding">
+        <div class="container">
+            <div class="row mtn-40">
+                <!-- footer widget item start -->
+                <div class="col-xl-5 col-lg-3 col-md-6">
+                    <div class="widget-item mt-40">
+                        <h5 class="widget-title">My Account</h5>
+                        <div class="widget-body">
+                            <ul class="location-wrap">
+                                <li><i class="ion-ios-location-outline"></i>184 Main Rd E, St Albans VIC 3021, Australia</li>
+                                <li><i class="ion-ios-email-outline"></i>Mail Us: <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></li>
+                                <li><i class="ion-ios-telephone-outline"></i>Phone: <a href="%2b0025425456554.html">+ 00 254 254565</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer widget item end -->
+
+                <!-- footer widget item start -->
+                <div class="col-xl-2 col-lg-3 col-md-6">
+                    <div class="widget-item mt-40">
+                        <h5 class="widget-title">Categories</h5>
+                        <div class="widget-body">
+                            <ul class="useful-link">
+                                <li><a href="#">Ecommerce</a></li>
+                                <li><a href="#">Shopify</a></li>
+                                <li><a href="#">Prestashop</a></li>
+                                <li><a href="#">Opencart</a></li>
+                                <li><a href="#">Magento</a></li>
+                                <li><a href="#">Jigoshop</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer widget item end -->
+
+                <!-- footer widget item start -->
+                <div class="col-xl-2 col-lg-3 col-md-6">
+                    <div class="widget-item mt-40">
+                        <h5 class="widget-title">Information</h5>
+                        <div class="widget-body">
+                            <ul class="useful-link">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Returns & Exchanges</a></li>
+                                <li><a href="#">Shipping & Delivery</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer widget item end -->
+
+                <!-- footer widget item start -->
+                <div class="col-xl-2 col-lg-3 offset-xl-1 col-md-6">
+                    <div class="widget-item mt-40">
+                        <h5 class="widget-title">Quick Links</h5>
+                        <div class="widget-body">
+                            <ul class="useful-link">
+                                <li><a href="#">Store Location</a></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Orders Tracking</a></li>
+                                <li><a href="#">Size Guide</a></li>
+                                <li><a href="#">Shopping Rates</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer widget item end -->
+            </div>
+        </div>
+    </div>
+    <!-- footer main area end -->
+
+    <!-- footer bottom area start -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-2 order-md-1">
+                    <div class="copyright-text text-center text-md-left">
+                        <p>&copy; 2021 <b>Juan</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/"><b>HasThemes</b></a></p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-1 order-md-2">
+                    <div class="footer-social-link text-center text-md-right">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer bottom area end -->
+</footer>
+<!-- End Footer Area Wrapper -->
+
+<!-- offcanvas search form start -->
+<div class="offcanvas-search-wrapper">
+    <div class="offcanvas-search-inner">
+        <div class="offcanvas-close">
+            <i class="ion-android-close"></i>
+        </div>
+        <div class="container">
+            <div class="offcanvas-search-box">
+                <form class="d-flex bdr-bottom w-100">
+                    <input type="text" placeholder="Search entire storage here...">
+                    <button class="search-btn"><i class="ion-ios-search-strong"></i>search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- offcanvas search form end -->
+
+<!-- offcanvas mini cart start -->
+<div class="offcanvas-minicart-wrapper">
+    <div class="minicart-inner">
+        <div class="offcanvas-overlay"></div>
+        <div class="minicart-inner-content">
+            <div class="minicart-close">
+                <i class="ion-android-close"></i>
+            </div>
+            <div class="minicart-content-box">
+                <div class="minicart-item-wrapper">
+                    <ul>
+                        <li class="minicart-item" th:each="items : ${session.cart}">
+                            <div class="minicart-thumb">
+                                <a th:href="@{'/detail/'+${items.productDTO.id}}">
+                                    <img th:src="|@{/images/}${items.productDTO.photo}|" alt="">
+                                </a>
+                            </div>
+                            <div class="minicart-content">
+                                <h3 class="product-name">
+                                    <a th:href="@{'/detail/'+${items.productDTO.id}}" th:text="${items.productDTO.name}" ></a>
+                                </h3>
+                                <p>
+                                    <span class="cart-quantity" th:text="Quantity +' :' + ${items.quantity}"><strong>&times;</strong></span>
+                                    <br>
+                                    <span class="cart-price" th:text="Price +' :' + ${items.productDTO.price}"></span>
+                                </p>
+                            </div>
+                            <button class="minicart-remove" th:onclick="'removeProductInCart(\'' + ${items.productDTO.id} + '\');'"><i class="ion-android-close"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="minicart-pricing-box">
+                    <ul>
+                        <li class="total">
+                            <span>total</span>
+                            <span><strong id="total-minicart"></strong></span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="minicart-button">
+                    <a th:href="@{'/cart'}"><i class="fa fa-shopping-cart"></i> view cart</a>
+                    <a th:href="@{'/checkout'}"><i class="fa fa-share"></i> checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- offcanvas mini cart end -->
+
+<!-- Scroll to top start -->
+<div class="scroll-top not-visible">
+    <i class="fa fa-angle-up"></i>
+</div>
+<!-- Scroll to Top End -->
+
+<!--=======================Javascript============================-->
+
+</body>
+
+<script th:src="@{/js/plugins.js}"></script>
+<script th:src="@{/js/active.js}"></script>
+<script th:src="@{/js/vendor.js}"></script>
+<script th:src="@{/js/ajax.js}"></script>
+
+
+</html>
